@@ -3,9 +3,8 @@
 
 enum move_dir {UP, RIGHT, DOWN, LEFT};
 bool playermove[4] = {false, false, false, false};
-enum state {IDLE, JUMPS, DIES};
-int states[3] = {0,0,0};
 int gravity = 2;
+bool isGroundVisible = true;
 
 struct PlayerObj
 {
@@ -17,6 +16,8 @@ struct PlayerObj
     int speedX;
     int boundX;
     int boundY;
+    bool onGround;
+    bool canJump;
     int score;
 };
 
